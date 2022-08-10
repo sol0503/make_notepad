@@ -1,0 +1,18 @@
+.App {
+  display: flex;
+}
+
+.MemoEditor {
+  background-color: blue;
+  text-align: center;
+  width: 80%;
+}
+
+.MemoList {
+  background-color: red;
+  width: 20%;
+}
+
+.MemoList h3 {
+  text-align: center;
+}
