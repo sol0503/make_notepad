@@ -5,14 +5,35 @@
 .MemoEditor {
   background-color: blue;
   text-align: center;
-  width: 80%;
+  width: 70%;
+  height: 1000px;
 }
 
 .MemoList {
   background-color: red;
-  width: 20%;
+  width: 30%;
 }
 
 .MemoList h3 {
   text-align: center;
+}
+
+.MemoItem {
+  margin-bottom: 10px;
+}
+.MemoItem .info {
+  display: flex;
+  border-bottom: 1px solid gray;
+}
+.MemoItem .info .content {
+  width: 30%;
+  text-align: left;
+}
+.MemoItem .info .matter {
+  width: 20%;
+  text-align: center;
+}
+.MemoItem .info .date {
+  width: 50%;
+  text-align: right;
 }
