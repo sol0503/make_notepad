@@ -21,10 +21,16 @@ const App = () => {
     setData([newItem, ...data]);
   };
 
+  const onDelete = (targetId) => {
+    console.log(`${targetId}가 삭제되었습니다.`);
+    const newMemoList = data.filter((it) => it.id !== targetId);
+    setData(newMemoList);
+  };
+
   return (
     <div className="App">
       <MemoEditor onCreate={onCreate} />
-      <MemoList memoList={data} />
+      <MemoList onDelete={onDelete} memoList={data} />
     </div>
   );
 };

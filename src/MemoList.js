@@ -1,6 +1,6 @@
 import MemoItem from "./MemoItem";
 
-const MemoList = ({ memoList }) => {
+const MemoList = ({ onDelete, memoList }) => {
   console.log(memoList);
   return (
     <div className="MemoList">
@@ -8,7 +8,7 @@ const MemoList = ({ memoList }) => {
       <h4>{memoList.length}개의 메모가 있습니다.</h4>
       <div>
         {memoList.map((it) => (
-          <MemoItem key={it.id} {...it} />
+          <MemoItem key={it.id} {...it} onDelete={onDelete} />
         ))}
       </div>
     </div>

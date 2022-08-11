@@ -1,6 +1,7 @@
 import Text from "./Text";
 import { useState } from "react";
-const MemoItem = ({ id, content, main, matter, created_date }) => {
+
+const MemoItem = ({ onDelete, id, content, main, matter, created_date }) => {
   const [isShow, setIsShow] = useState(false);
 
   const showContent = () => {
@@ -16,7 +17,7 @@ const MemoItem = ({ id, content, main, matter, created_date }) => {
           날짜:{new Date(created_date).toLocaleString()}
         </div>
       </div>
-      {isShow === true && <Text content={content} />}
+      {isShow === true && <Text main={main} onDelete={onDelete} id={id} />}
     </div>
   );
 };
