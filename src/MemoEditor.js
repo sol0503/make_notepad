@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-const MemoEditor = () => {
+const MemoEditor = ({ onCreate }) => {
   const contentInput = useRef();
   const mainInput = useRef();
 
@@ -28,8 +28,14 @@ const MemoEditor = () => {
       mainInput.current.focus();
       return;
     }
+    onCreate(state.content, state.main, state.matter);
     console.log(state);
     alert("저장하였습니다!");
+    setState({
+      content: "",
+      main: "",
+      matter: 1,
+    });
   };
 
   return (
