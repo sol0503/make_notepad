@@ -27,10 +27,18 @@ const App = () => {
     setData(newMemoList);
   };
 
+  const onEdit = (targetId, newContent) => {
+    setData(
+      data.map((it) =>
+        it.id === targetId ? { ...it, content: newContent } : it
+      )
+    );
+  };
+
   return (
     <div className="App">
       <MemoEditor onCreate={onCreate} />
-      <MemoList onDelete={onDelete} memoList={data} />
+      <MemoList onEdit={onEdit} onDelete={onDelete} memoList={data} />
     </div>
   );
 };
